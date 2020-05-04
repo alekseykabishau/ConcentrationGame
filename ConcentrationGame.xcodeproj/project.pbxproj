@@ -13,6 +13,8 @@
 		5BE16781245F329600934D70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BE1677F245F329600934D70 /* Main.storyboard */; };
 		5BE16783245F329700934D70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE16782245F329700934D70 /* Assets.xcassets */; };
 		5BE16786245F329700934D70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BE16784245F329700934D70 /* LaunchScreen.storyboard */; };
+		5BE1678F245F336B00934D70 /* Concetration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE1678E245F336B00934D70 /* Concetration.swift */; };
+		5BE16792245F33C600934D70 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE16791245F33C600934D70 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		5BE16782245F329700934D70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BE16785245F329700934D70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BE16787245F329700934D70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BE1678E245F336B00934D70 /* Concetration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concetration.swift; sourceTree = "<group>"; };
+		5BE16791245F33C600934D70 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		5BE16778245F329600934D70 /* ConcentrationGame */ = {
 			isa = PBXGroup;
 			children = (
+				5BE16790245F337200934D70 /* Model */,
 				5BE1677D245F329600934D70 /* ViewController.swift */,
 				5BE1677F245F329600934D70 /* Main.storyboard */,
 				5BE1678D245F32A100934D70 /* Support */,
@@ -73,6 +78,15 @@
 				5BE16787245F329700934D70 /* Info.plist */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		5BE16790245F337200934D70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5BE1678E245F336B00934D70 /* Concetration.swift */,
+				5BE16791245F33C600934D70 /* Card.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +162,8 @@
 			files = (
 				5BE1677E245F329600934D70 /* ViewController.swift in Sources */,
 				5BE1677A245F329600934D70 /* AppDelegate.swift in Sources */,
+				5BE16792245F33C600934D70 /* Card.swift in Sources */,
+				5BE1678F245F336B00934D70 /* Concetration.swift in Sources */,
 				5BE1677C245F329600934D70 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,7 +310,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VGW2M4R8BY;
-				INFOPLIST_FILE = ConcentrationGame/Info.plist;
+				INFOPLIST_FILE = ConcentrationGame/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +328,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VGW2M4R8BY;
-				INFOPLIST_FILE = ConcentrationGame/Info.plist;
+				INFOPLIST_FILE = ConcentrationGame/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
