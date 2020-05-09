@@ -35,7 +35,7 @@ class Concentration {
 	
 	
 	init(numberOfPairsOfCard: Int) {
-		assert(numberOfPairsOfCard > 0, "Concentration.init - numberOfPairsOfCard is \(numberOfPairsOfCard) but should be more then 0")
+		assert(numberOfPairsOfCard > 0, "Concentration.init(\(numberOfPairsOfCard)) number must greater then 0")
 		for _ in 0..<numberOfPairsOfCard {
 			let card = Card()
 			cards += [card, card]
@@ -46,7 +46,7 @@ class Concentration {
 	
 	func chooseCard(at index: Int) {
 		if !cards[index].isMatched {
-			assert(cards.indices.contains(index), "Concentration.chooseCard - Index \(index) is not in cards.indices ")
+			assert(cards.indices.contains(index), "Concentration.chooseCard(at: \(index) chosen index is not in cards")
 			if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
 				if cards[matchIndex].id == cards[index].id {
 					cards[matchIndex].isMatched = true
