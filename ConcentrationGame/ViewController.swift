@@ -10,20 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 	
-	@IBOutlet var cardButtons: [UIButton]!
-	@IBOutlet weak var flipCountLabel: UILabel!
+	@IBOutlet private var cardButtons: [UIButton]!
+	@IBOutlet private weak var flipCountLabel: UILabel!
 	
-	lazy var game = Concentration(numberOfPairsOfCard: cardButtons.count / 2)
+	private lazy var game = Concentration(numberOfPairsOfCard: numberOfPairsOfCard)
 	
-	var emojiChoices = ["🇨🇭","🇨🇦","🇪🇸","🇵🇱","🇺🇸","🇧🇾","🇮🇹","🇩🇪", "🇯🇵"]
-	var emoji = [Int: String]()
+	var numberOfPairsOfCard: Int {
+		return cardButtons.count / 2
+	}
 	
-	var flipCount = 0 {
+	private var emojiChoices = ["🇨🇭","🇨🇦","🇪🇸","🇵🇱","🇺🇸","🇧🇾","🇮🇹","🇩🇪", "🇯🇵"]
+	private var emoji = [Int: String]()
+	
+	private(set) var flipCount = 0 {
 		didSet { flipCountLabel.text = "Flips: \(flipCount)" }
 	}
 	
 	
-	@IBAction func touchCard(_ sender: UIButton) {
+	@IBAction private func touchCard(_ sender: UIButton) {
 		flipCount += 1
 		if let cardIndex = cardButtons.firstIndex(of: sender) {
 			game.chooseCard(at: cardIndex)
@@ -39,7 +43,7 @@ class ViewController: UIViewController {
 	}
 	
 
-	func emoji(for card: Card) -> String {
+	private func emoji(for card: Card) -> String {
 		if emoji[card.id] == nil, emojiChoices.count > 0 {
 			let randomIndex = Int.random(in: 0..<emojiChoices.count)
 			emoji[card.id] = emojiChoices.remove(at: randomIndex)
@@ -48,7 +52,7 @@ class ViewController: UIViewController {
 	}
 
 	
-	func updateViewFromModel() {
+	private func updateViewFromModel() {
 		for index in cardButtons.indices {
 			let button = cardButtons[index]
 			let card = game.cards[index]
