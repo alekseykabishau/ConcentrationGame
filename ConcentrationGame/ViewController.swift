@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 	
 	@IBOutlet private var cardButtons: [UIButton]!
-	@IBOutlet private weak var flipCountLabel: UILabel!
+	@IBOutlet private weak var flipCountLabel: UILabel! {
+		didSet { updateFlipCountLabel() }
+	}
 	
 	private lazy var game = Concentration(numberOfPairsOfCard: numberOfPairsOfCard)
 	
@@ -23,7 +25,7 @@ class ViewController: UIViewController {
 	private var emoji = [Int: String]()
 	
 	private(set) var flipCount = 0 {
-		didSet { flipCountLabel.text = "Flips: \(flipCount)" }
+		didSet { updateFlipCountLabel() }
 	}
 	
 	
@@ -64,6 +66,16 @@ class ViewController: UIViewController {
 				button.backgroundColor = card.isMatched ? .clear : .systemOrange
 			}
 		}
+	}
+	
+	
+	private func updateFlipCountLabel() {
+		let attributes: [NSAttributedString.Key: Any] = [
+			.strokeWidth: 5.0,
+			.strokeColor: UIColor.systemOrange
+		]
+		let attributedText = NSAttributedString(string: "Flips: \(flipCount)", attributes: attributes)
+		flipCountLabel.attributedText = attributedText
 	}
 }
 
